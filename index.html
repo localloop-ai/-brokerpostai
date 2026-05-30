@@ -4,13 +4,20 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>BrokerPost AI | Free Content Preview for Insurance Agencies</title>
-  <meta name="description" content="Get a free 30-day content plan preview for your insurance agency with custom post ideas, a short-form video script, and content opportunities based on your services and local market." />
+  <meta name="description" content="See what your insurance agency should post next month. Get a free 30-day content plan preview with custom post ideas, a short-form video script, and content opportunities based on your services and local market." />
+  <meta property="og:title" content="BrokerPost AI | Free Content Preview for Insurance Agencies" />
+  <meta property="og:description" content="Get a free 30-day content plan preview for your insurance agency." />
+  <meta property="og:type" content="website" />
+  <meta name="theme-color" content="#155EEF" />
+
   <style>
     :root{
       --navy:#071A33;
+      --ink:#08162C;
       --blue:#155EEF;
       --blue-2:#1D4ED8;
       --yellow:#FFD84D;
+      --yellow-2:#FACC15;
       --yellow-soft:#FFF5B8;
       --green:#22C55E;
       --purple:#8B5CF6;
@@ -19,9 +26,10 @@
       --border:#E5EAF2;
       --muted:#5D6B82;
       --white:#FFFFFF;
+      --skin:#B87852;
+      --skin-light:#D99A73;
       --shadow:0 24px 70px rgba(7,26,51,.10);
       --soft-shadow:0 12px 36px rgba(7,26,51,.08);
-      --radius:28px;
       --max:1180px;
       --font: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
     }
@@ -32,9 +40,804 @@
       margin:0;
       font-family:var(--font);
       color:var(--navy);
-      background:linear-gradient(180deg,#ffffff 0%,#fbfdff 42%,#ffffff 100%);
+      background:#fff;
       line-height:1.45;
+      -webkit-font-smoothing:antialiased;
+      text-rendering:optimizeLegibility;
     }
+    a{color:inherit;text-decoration:none}
+    button,input,select,textarea{font-family:inherit}
+    .wrap{max-width:var(--max);margin:0 auto;padding:0 28px}
+
+    .nav{
+      height:78px;
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:24px;
+    }
+    .brand{
+      display:flex;
+      align-items:center;
+      gap:10px;
+      font-weight:850;
+      font-size:22px;
+      letter-spacing:-.045em;
+      white-space:nowrap;
+    }
+    .mark{
+      width:32px;
+      height:32px;
+      border-radius:11px;
+      background:linear-gradient(135deg,var(--yellow),#F7B500);
+      display:grid;
+      place-items:center;
+      box-shadow:0 12px 28px rgba(250,204,21,.32);
+      position:relative;
+      overflow:hidden;
+    }
+    .mark:before{
+      content:"";
+      width:17px;
+      height:17px;
+      background:#fff;
+      clip-path:polygon(45% 0%, 86% 0%, 64% 40%, 100% 40%, 36% 100%, 48% 56%, 12% 56%);
+    }
+    .brand span:last-child{color:var(--blue)}
+    .links{display:flex;align-items:center;gap:36px;font-size:14px;font-weight:700}
+    .nav-actions{display:flex;align-items:center;gap:12px}
+
+    .btn{
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      min-height:48px;
+      padding:0 24px;
+      border-radius:999px;
+      font-size:15px;
+      font-weight:850;
+      letter-spacing:-.01em;
+      border:1px solid transparent;
+      transition:.2s ease;
+      cursor:pointer;
+      white-space:nowrap;
+    }
+    .btn.primary{background:var(--blue);color:white;box-shadow:0 15px 30px rgba(21,94,239,.22)}
+    .btn.primary:hover{background:var(--blue-2);transform:translateY(-1px)}
+    .btn.secondary{background:white;border-color:var(--border);color:var(--navy);box-shadow:0 10px 22px rgba(7,26,51,.04)}
+    .btn.secondary:hover{transform:translateY(-1px);box-shadow:var(--soft-shadow)}
+    .btn.small{min-height:42px;padding:0 20px;font-size:14px}
+
+    .hero{
+      padding:28px 0 26px;
+    }
+    .hero-panel{
+      min-height:640px;
+      border-radius:34px;
+      background:
+        radial-gradient(circle at 8% 82%, rgba(255,216,77,.82) 0 0, rgba(255,216,77,.55) 0 15%, transparent 34%),
+        radial-gradient(circle at 94% 82%, rgba(21,94,239,.26) 0 0, rgba(21,94,239,.20) 0 30%, transparent 56%),
+        linear-gradient(135deg,#FFFFFF 0%,#FFFFFF 44%,#F4F8FF 100%);
+      border:1px solid rgba(226,232,240,.9);
+      box-shadow:0 20px 72px rgba(7,26,51,.08);
+      overflow:hidden;
+      position:relative;
+      padding:78px 64px 58px;
+    }
+    .hero-grid{
+      display:grid;
+      grid-template-columns:1.02fr .98fr;
+      gap:38px;
+      align-items:center;
+      min-height:500px;
+    }
+    h1{
+      font-size:64px;
+      line-height:.98;
+      letter-spacing:-.075em;
+      margin:0 0 22px;
+      max-width:650px;
+      color:var(--ink);
+    }
+    .sub{
+      font-size:18px;
+      color:var(--muted);
+      max-width:570px;
+      margin:0 0 30px;
+    }
+    .hero-ctas{display:flex;gap:14px;align-items:center;margin-bottom:30px}
+    .hero-ctas .play{
+      width:32px;height:32px;border-radius:50%;display:grid;place-items:center;background:#F1F5F9;color:var(--blue);margin-right:8px;font-size:13px;
+    }
+    .chips{display:flex;flex-wrap:wrap;gap:12px}
+    .chip{
+      display:inline-flex;
+      align-items:center;
+      gap:9px;
+      padding:10px 14px;
+      background:rgba(255,255,255,.92);
+      border:1px solid var(--border);
+      border-radius:14px;
+      font-size:13px;
+      font-weight:760;
+      color:#26354D;
+      box-shadow:0 10px 24px rgba(7,26,51,.04);
+    }
+    .chip-icon{
+      width:26px;
+      height:26px;
+      border-radius:10px;
+      background:var(--sky);
+      display:grid;
+      place-items:center;
+      color:var(--blue);
+      font-size:14px;
+      font-weight:900;
+    }
+    .chip-icon.yellow{background:#FFF4B8;color:#8A6700}
+    .chip-icon.green{background:#DCFCE7;color:#16A34A}
+
+    /* Hero device + human hand */
+    .device-scene{
+      position:relative;
+      height:535px;
+      width:100%;
+    }
+    .hand{
+      position:absolute;
+      left:8%;
+      bottom:-92px;
+      width:360px;
+      height:405px;
+      background:
+        radial-gradient(circle at 74% 17%, rgba(255,255,255,.18), transparent 15%),
+        linear-gradient(135deg,var(--skin-light),var(--skin) 62%,#815138);
+      border-radius:46% 42% 36% 34% / 42% 42% 52% 46%;
+      transform:rotate(-18deg);
+      box-shadow:0 30px 70px rgba(7,26,51,.20);
+      z-index:1;
+    }
+    .hand:before{
+      content:"";
+      position:absolute;
+      left:38px;
+      top:-55px;
+      width:70px;
+      height:178px;
+      background:linear-gradient(180deg,#DFA17A,#A96F4D);
+      border-radius:42px;
+      transform:rotate(-28deg);
+      box-shadow:
+        58px 20px 0 -6px #B87852,
+        108px 48px 0 -15px #A86A49,
+        150px 84px 0 -25px #96603F;
+    }
+    .hand:after{
+      content:"";
+      position:absolute;
+      right:-88px;
+      top:92px;
+      width:120px;
+      height:300px;
+      background:linear-gradient(145deg,#A96F4D,#7A4A33);
+      border-radius:65px;
+      transform:rotate(25deg);
+      z-index:-1;
+      opacity:.95;
+    }
+    .phone{
+      position:absolute;
+      right:19%;
+      top:8px;
+      width:292px;
+      height:470px;
+      border:12px solid #151C27;
+      border-radius:44px;
+      background:white;
+      box-shadow:0 34px 72px rgba(7,26,51,.28);
+      transform:rotate(9deg);
+      z-index:3;
+      padding:26px 18px;
+    }
+    .phone:before{
+      content:"";
+      position:absolute;
+      top:10px;
+      left:50%;
+      transform:translateX(-50%);
+      width:78px;
+      height:22px;
+      background:#111827;
+      border-radius:999px;
+    }
+    .phone-top{
+      margin-top:21px;
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      font-size:11px;
+      color:#5D6B82;
+      font-weight:800;
+    }
+    .phone h3{margin:11px 0 14px;font-size:17px;letter-spacing:-.03em}
+    .mini-row{
+      display:flex;
+      align-items:center;
+      gap:10px;
+      padding:11px 10px;
+      margin-bottom:9px;
+      border:1px solid #ECF0F6;
+      border-radius:13px;
+      background:#FAFCFF;
+      font-size:12px;
+      font-weight:780;
+    }
+    .mini-app{
+      width:27px;
+      height:27px;
+      border-radius:9px;
+      display:grid;
+      place-items:center;
+      color:white;
+      font-size:13px;
+      font-weight:900;
+      flex:0 0 27px;
+    }
+    .mini-app.green{background:var(--green)}
+    .mini-app.yellow{background:var(--yellow);color:#5c4500}
+    .mini-app.blue{background:var(--blue)}
+    .mini-app.purple{background:var(--purple)}
+    .ready{
+      margin-top:18px;
+      padding:14px;
+      border-radius:17px;
+      background:#F8FAFC;
+      font-size:12px;
+      font-weight:730;
+      color:#34415A;
+    }
+    .ready .btn{width:100%;min-height:42px;margin-top:12px;font-size:13px}
+    .float{
+      position:absolute;
+      background:white;
+      border:1px solid var(--border);
+      border-radius:20px;
+      box-shadow:var(--soft-shadow);
+      z-index:4;
+      font-weight:850;
+      font-size:14px;
+    }
+    .float.ready-badge{right:6%;top:112px;padding:15px 18px;display:flex;gap:10px;align-items:center}
+    .float.simple{right:2%;bottom:90px;padding:13px 17px;display:flex;gap:10px;align-items:center}
+
+    .section{padding:50px 0}
+    .center{text-align:center}
+    .section h2{
+      font-size:42px;
+      line-height:1.08;
+      letter-spacing:-.055em;
+      margin:0 0 14px;
+      color:var(--ink);
+    }
+    .blue{color:var(--blue)}
+    .yellow{color:#E1B900}
+    .section .lead{
+      font-size:17px;
+      color:var(--muted);
+      margin:0 auto 34px;
+      max-width:700px;
+    }
+
+    .cards4{display:grid;grid-template-columns:repeat(4,1fr);gap:22px}
+    .info-card{
+      background:white;
+      border:1px solid var(--border);
+      border-radius:24px;
+      padding:28px;
+      box-shadow:0 18px 50px rgba(7,26,51,.06);
+      text-align:left;
+    }
+    .appicon{
+      width:58px;
+      height:58px;
+      border-radius:18px;
+      display:grid;
+      place-items:center;
+      font-size:26px;
+      margin-bottom:24px;
+      color:white;
+      font-weight:900;
+      box-shadow:0 16px 32px rgba(7,26,51,.12);
+    }
+    .appicon.green{background:linear-gradient(135deg,#4ADE80,#16A34A)}
+    .appicon.yellow{background:linear-gradient(135deg,#FFE76A,#FACC15);color:#604500}
+    .appicon.blue{background:linear-gradient(135deg,#3B82F6,#155EEF)}
+    .appicon.purple{background:linear-gradient(135deg,#A78BFA,#7C3AED)}
+    .info-card h3{font-size:22px;line-height:1.06;letter-spacing:-.045em;margin:0 0 12px}
+    .info-card p{font-size:14px;color:var(--muted);margin:0}
+
+    .sample-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+    .sample-card{
+      min-height:186px;
+      padding:24px;
+      border-radius:22px;
+      border:1px solid var(--border);
+      box-shadow:0 16px 42px rgba(7,26,51,.05);
+      display:grid;
+      grid-template-columns:58px 1fr;
+      gap:18px;
+      text-align:left;
+      align-items:start;
+    }
+    .sample-card .appicon{margin:0}
+    .sample-card.one{background:linear-gradient(135deg,#F0FFF4,#FFFFFF)}
+    .sample-card.two{background:linear-gradient(135deg,#FFF9DA,#FFFFFF)}
+    .sample-card.three{background:linear-gradient(135deg,#EEF4FF,#FFFFFF)}
+    .sample-card h3{font-size:18px;margin:0 0 8px;letter-spacing:-.035em}
+    .sample-card p{font-size:14px;color:#26354D;margin:0 0 16px}
+    .pill{
+      display:inline-flex;
+      padding:7px 10px;
+      border-radius:8px;
+      font-size:12px;
+      font-weight:850;
+    }
+    .pill.green{background:#DCFCE7;color:#16A34A}
+    .pill.yellow{background:#FEF3C7;color:#B68100}
+    .pill.blue{background:#DBEAFE;color:var(--blue)}
+
+    .steps{
+      display:grid;
+      grid-template-columns:1fr 40px 1fr 40px 1fr;
+      gap:0;
+      align-items:center;
+      margin-top:34px;
+    }
+    .step{
+      background:white;
+      border:1px solid var(--border);
+      border-radius:22px;
+      padding:24px;
+      min-height:160px;
+      box-shadow:0 16px 42px rgba(7,26,51,.05);
+      text-align:left;
+      display:grid;
+      grid-template-columns:58px 1fr;
+      gap:18px;
+    }
+    .step .appicon{margin:0}
+    .arrow{text-align:center;font-size:28px;color:var(--blue);font-weight:900}
+    .step h3{font-size:18px;margin:0 0 8px;letter-spacing:-.03em}
+    .step p{font-size:14px;color:var(--muted);margin:0}
+    .control-line{text-align:center;margin:24px 0 0;color:#254160;font-weight:800;font-size:14px}
+    .control-line span{color:var(--green)}
+
+    .form-block{
+      margin-top:30px;
+      border-radius:30px;
+      overflow:hidden;
+      display:grid;
+      grid-template-columns:.85fr 1.15fr;
+      background:linear-gradient(135deg,var(--yellow-soft) 0%,#ffffff 48%,#f1f6ff 100%);
+      box-shadow:var(--shadow);
+      border:1px solid var(--border);
+    }
+    .form-copy{padding:56px}
+    .form-copy h2{text-align:left;margin-bottom:18px}
+    .form-copy p{color:#26354D;font-size:17px;margin:0 0 22px;max-width:360px}
+    .time{font-weight:900}
+    .form-area{
+      padding:48px;
+      background:rgba(255,255,255,.72);
+      backdrop-filter:blur(12px);
+    }
+    .field-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+    input,select{
+      width:100%;
+      height:52px;
+      border:1px solid var(--border);
+      border-radius:13px;
+      padding:0 16px;
+      font:650 14px var(--font);
+      color:var(--navy);
+      background:white;
+      outline:none;
+    }
+    input:focus,select:focus{border-color:rgba(21,94,239,.55);box-shadow:0 0 0 4px rgba(21,94,239,.10)}
+    .wide{grid-column:1/-1}
+    form .btn{width:100%;margin-top:15px;border-radius:12px}
+    .privacy{display:flex;gap:9px;margin-top:18px;color:var(--muted);font-size:13px;font-weight:700}
+    .privacy span{color:var(--green);font-size:18px}
+
+    .tally-placeholder{
+      min-height:390px;
+      border:2px dashed rgba(21,94,239,.28);
+      border-radius:20px;
+      background:white;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      text-align:center;
+      padding:32px;
+    }
+    .tally-placeholder h3{margin:0 0 10px;font-size:22px;letter-spacing:-.035em}
+    .tally-placeholder p{color:var(--muted);margin:0 auto 18px;max-width:420px;font-size:15px}
+    .tally-code{display:inline-block;background:#F8FAFC;border:1px solid var(--border);color:#334155;border-radius:10px;padding:10px 12px;font-size:13px;font-weight:800}
+
+    .faq{max-width:940px;margin:0 auto}
+    details{
+      border:1px solid var(--border);
+      border-radius:17px;
+      background:white;
+      margin-bottom:12px;
+      padding:0 18px;
+      box-shadow:0 10px 25px rgba(7,26,51,.035);
+      text-align:left;
+    }
+    summary{cursor:pointer;list-style:none;font-weight:850;padding:18px 0;display:flex;justify-content:space-between;gap:20px}
+    summary::-webkit-details-marker{display:none}
+    summary:after{
+      content:"+";
+      flex:0 0 26px;
+      width:26px;height:26px;border-radius:50%;
+      background:var(--blue);color:white;display:grid;place-items:center;font-weight:900;
+    }
+    details[open] summary:after{content:"−"}
+    details p{color:var(--muted);margin:0 0 20px;font-size:15px}
+
+    .final-cta{
+      margin:30px auto 58px;
+      border-radius:26px;
+      background:
+        radial-gradient(circle at 0% 90%, rgba(255,216,77,.95) 0 0, rgba(255,216,77,.55) 0 18%, transparent 36%),
+        linear-gradient(120deg,#FFF8CF 0%,#FFFFFF 45%,#DBE8FF 100%);
+      border:1px solid var(--border);
+      display:grid;
+      grid-template-columns:80px 1fr auto;
+      align-items:center;
+      gap:22px;
+      padding:32px 38px;
+      box-shadow:var(--soft-shadow);
+    }
+    .final-cta h2{font-size:34px;letter-spacing:-.045em;line-height:1.08;margin:0 0 6px}
+    .final-cta p{margin:0;color:var(--muted);font-weight:700}
+
+    footer{
+      border-top:1px solid var(--border);
+      padding:42px 0 38px;
+      background:#fff;
+    }
+    .footer-grid{display:grid;grid-template-columns:1.5fr repeat(3,1fr);gap:34px}
+    footer .brand{margin-bottom:18px}
+    footer p,footer a{color:#64748B;font-size:14px}
+    footer h4{margin:0 0 16px;font-size:15px}
+    .foot-links{display:grid;gap:9px}
+    .copyright{margin-top:32px;color:#94A3B8;font-size:13px}
+
+    @media(max-width: 980px){
+      .links{display:none}
+      .hero-panel{padding:54px 34px}
+      .hero-grid,.form-block{grid-template-columns:1fr}
+      .device-scene{height:510px}
+      h1{font-size:50px}
+      .cards4{grid-template-columns:1fr 1fr}
+      .sample-grid{grid-template-columns:1fr}
+      .steps{grid-template-columns:1fr;gap:16px}
+      .arrow{transform:rotate(90deg)}
+      .final-cta{grid-template-columns:1fr;text-align:center}
+      .final-cta .appicon{margin:0 auto}
+      .footer-grid{grid-template-columns:1fr 1fr}
+    }
+
+    @media(max-width: 600px){
+      .wrap{padding:0 18px}
+      .nav{height:68px}
+      .brand{font-size:19px}
+      .nav-actions .btn{padding:0 14px;font-size:13px}
+      .hero{padding-top:10px}
+      .hero-panel{padding:38px 22px 28px;border-radius:26px}
+      h1{font-size:40px}
+      .sub{font-size:16px}
+      .hero-ctas{flex-direction:column;align-items:stretch}
+      .btn{width:100%}
+      .chips{display:grid}
+      .chip{justify-content:center}
+      .device-scene{height:445px;margin-top:14px}
+      .hand{left:-22px;bottom:-110px;width:295px;height:350px}
+      .phone{right:16px;top:0;width:226px;height:388px;border-width:9px;border-radius:36px;padding:22px 14px}
+      .phone h3{font-size:15px}
+      .mini-row{font-size:10px;padding:9px 8px}
+      .float.ready-badge{right:5px;top:86px}
+      .float.simple{right:5px;bottom:60px}
+      .cards4{grid-template-columns:1fr}
+      .section{padding:38px 0}
+      .section h2{font-size:34px}
+      .sample-card,.step{grid-template-columns:1fr}
+      .field-grid{grid-template-columns:1fr}
+      .form-copy,.form-area{padding:28px}
+      .footer-grid{grid-template-columns:1fr}
+    }
+  </style>
+</head>
+
+<body>
+  <header class="wrap nav">
+    <a class="brand" href="#top" aria-label="BrokerPost AI Home">
+      <span class="mark"></span>
+      <span>BrokerPost</span><span>AI</span>
+    </a>
+
+    <nav class="links" aria-label="Main navigation">
+      <a href="#how">How It Works</a>
+      <a href="#samples">Sample Output</a>
+      <a href="#faq">FAQ</a>
+      <a href="#preview">Pricing</a>
+    </nav>
+
+    <div class="nav-actions">
+      <a class="btn primary small" href="#preview">Get My Free Preview</a>
+    </div>
+  </header>
+
+  <main id="top">
+    <section class="hero wrap">
+      <div class="hero-panel">
+        <div class="hero-grid">
+          <div>
+            <h1>See what your insurance agency should post next month</h1>
+            <p class="sub">Get a free 30-day content plan preview with custom post ideas, a short-form video script, and content opportunities based on your website, services, and local market.</p>
+
+            <div class="hero-ctas">
+              <a class="btn primary" href="#preview">Get My Free Preview</a>
+              <a class="btn secondary" href="#samples"><span class="play">▶</span>See Sample Output</a>
+            </div>
+
+            <div class="chips">
+              <span class="chip"><span class="chip-icon yellow">▭</span>No credit card required</span>
+              <span class="chip"><span class="chip-icon">⏱</span>Takes less than 2 minutes</span>
+              <span class="chip"><span class="chip-icon green">♢</span>Built for insurance agencies</span>
+            </div>
+          </div>
+
+          <div class="device-scene" aria-label="BrokerPost preview mockup with smartphone">
+            <div class="hand" aria-hidden="true"></div>
+
+            <div class="phone">
+              <div class="phone-top"><span>9:41</span><span>BrokerPost AI</span><span>⌄</span></div>
+              <h3>Preview Overview</h3>
+              <div class="mini-row"><span class="mini-app green">✎</span>Post Ideas <strong style="margin-left:auto">3 ideas</strong></div>
+              <div class="mini-row"><span class="mini-app yellow">▶</span>Video Script <strong style="margin-left:auto">1 script</strong></div>
+              <div class="mini-row"><span class="mini-app blue">⌕</span>Content Gap Insight <strong style="margin-left:auto">1 insight</strong></div>
+              <div class="mini-row"><span class="mini-app purple">▣</span>Campaign Suggestion <strong style="margin-left:auto">1 campaign</strong></div>
+              <div class="ready">
+                <strong>Ready for Review</strong><br>
+                Approve what you like or request changes.
+                <a class="btn primary" href="#preview">View Preview</a>
+              </div>
+            </div>
+
+            <div class="float ready-badge"><span class="mini-app yellow">✓</span>Your preview is ready</div>
+            <div class="float simple"><span class="mini-app yellow">▣</span>One simple process</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section wrap center">
+      <h2>A <span class="yellow">free</span> preview built around <span class="blue">your agency</span></h2>
+      <p class="lead">No generic templates. Your preview is based on your services, audience, and local market.</p>
+
+      <div class="cards4">
+        <article class="info-card">
+          <div class="appicon yellow">✎</div>
+          <h3>3 Custom<br>Post Ideas</h3>
+          <p>Tailored to your services and local audience.</p>
+        </article>
+
+        <article class="info-card">
+          <div class="appicon blue">▣</div>
+          <h3>1 Short-Form<br>Video Script</h3>
+          <p>A ready-to-record script that saves you time.</p>
+        </article>
+
+        <article class="info-card">
+          <div class="appicon yellow">▥</div>
+          <h3>1 Content Gap<br>Insight</h3>
+          <p>See what your audience is looking for but not finding.</p>
+        </article>
+
+        <article class="info-card">
+          <div class="appicon blue">□</div>
+          <h3>1 Campaign<br>Suggestion</h3>
+          <p>A simple campaign idea to build awareness or trust.</p>
+        </article>
+      </div>
+    </section>
+
+    <section id="samples" class="section wrap center">
+      <h2>See the kind of content <span class="blue">your agency</span> could receive</h2>
+      <p class="lead">Practical ideas designed to educate, build trust, and keep your agency visible.</p>
+
+      <div class="sample-grid">
+        <article class="sample-card one">
+          <div class="appicon blue">⌂</div>
+          <div>
+            <h3>Home Insurance Tip</h3>
+            <p>First-time homeowner? Ask these 5 insurance questions before closing.</p>
+            <span class="pill green">Educational Post</span>
+          </div>
+        </article>
+
+        <article class="sample-card two">
+          <div class="appicon yellow">☂</div>
+          <div>
+            <h3>Storm Prep Reminder</h3>
+            <p>Before heavy rain hits, check your gutters, roof, and deductible.</p>
+            <span class="pill yellow">Seasonal Reminder</span>
+          </div>
+        </article>
+
+        <article class="sample-card three">
+          <div class="appicon blue">▣</div>
+          <div>
+            <h3>Auto Insurance Video</h3>
+            <p>Before you renew, make sure your coverage still fits your life.</p>
+            <span class="pill blue">Short-Form Script</span>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section id="how" class="section wrap center">
+      <h2>How it works</h2>
+      <p class="lead">A simple process with no complicated setup.</p>
+
+      <div class="steps">
+        <article class="step">
+          <div class="appicon green">▤</div>
+          <div>
+            <h3>Share your agency information</h3>
+            <p>Tell us about your agency, services, and audience.</p>
+          </div>
+        </article>
+
+        <div class="arrow">→</div>
+
+        <article class="step">
+          <div class="appicon yellow">✦</div>
+          <div>
+            <h3>We create your preview</h3>
+            <p>Our AI builds a custom 30-day content plan preview.</p>
+          </div>
+        </article>
+
+        <div class="arrow">→</div>
+
+        <article class="step">
+          <div class="appicon blue">✓</div>
+          <div>
+            <h3>You review & decide</h3>
+            <p>Approve what you like, request changes, or download and go.</p>
+          </div>
+        </article>
+      </div>
+
+      <p class="control-line"><span>✓</span> AI does the heavy lifting. You stay in control.</p>
+    </section>
+
+    <section id="preview" class="section wrap">
+      <div class="form-block">
+        <div class="form-copy">
+          <h2>Request your <span class="yellow">free</span> content preview</h2>
+          <p>Share your agency details and we’ll send back a simple preview of what you could post next month.</p>
+          <p class="time">Takes less than 2 minutes.</p>
+        </div>
+
+        <div class="form-area">
+          <!--
+            TALLY FORM EMBED GOES HERE.
+
+            Replace the placeholder below with your Tally embed code.
+
+            Example:
+            <iframe data-tally-src="https://tally.so/embed/YOUR_FORM_ID?alignLeft=1&hideTitle=1&transparentBackground=1&dynamicHeight=1" loading="lazy" width="100%" height="500" frameborder="0" marginheight="0" marginwidth="0" title="BrokerPost AI Free Preview"></iframe>
+            <script>
+            var d=document,w="https://tally.so/widgets/embed.js",v=function(){
+              "undefined"!=typeof Tally?Tally.loadEmbeds():
+              d.querySelectorAll("iframe[data-tally-src]:not([src])").forEach(function(e){e.src=e.dataset.tallySrc})
+            };
+            if("undefined"!=typeof Tally)v();
+            else if(d.querySelector('script[src="'+w+'"]')==null){
+              var s=d.createElement("script");s.src=w;s.onload=v;s.onerror=v;d.body.appendChild(s);
+            }
+            </script>
+          -->
+
+          <div class="tally-placeholder">
+            <div>
+              <h3>Tally Form Placeholder</h3>
+              <p>Replace this box with your Tally embed code once your form is created.</p>
+              <span class="tally-code">Fields: Name · Email · Agency · Website · Services · Challenge</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="faq" class="section wrap center">
+      <h2>Frequently asked questions</h2>
+
+      <div class="faq">
+        <details>
+          <summary>Is this only for insurance agencies?</summary>
+          <p>Yes. This first version is designed specifically for independent insurance brokers and local insurance agencies.</p>
+        </details>
+
+        <details>
+          <summary>Do you provide insurance advice?</summary>
+          <p>No. BrokerPost AI creates general marketing content ideas only. Specific coverage, claims, legal, or policy details should always be reviewed by a licensed broker.</p>
+        </details>
+
+        <details>
+          <summary>Can we edit the content?</summary>
+          <p>Yes. The preview is designed to give your agency a strong starting point. You stay in control of what gets approved and posted.</p>
+        </details>
+      </div>
+    </section>
+
+    <section class="wrap">
+      <div class="final-cta">
+        <div class="appicon yellow">⚡</div>
+        <div>
+          <h2>Slips happen. Content shouldn’t.</h2>
+          <p>Get a custom 30-day content preview for your agency.</p>
+        </div>
+        <a class="btn primary" href="#preview">Get My Free Preview</a>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="wrap">
+      <div class="footer-grid">
+        <div>
+          <a class="brand" href="#top">
+            <span class="mark"></span>
+            <span>BrokerPost</span><span>AI</span>
+          </a>
+          <p>AI-assisted content previews for independent insurance agencies.</p>
+          <div class="copyright">© 2026 BrokerPost AI. All rights reserved.</div>
+        </div>
+
+        <div>
+          <h4>Useful Links</h4>
+          <div class="foot-links">
+            <a href="#how">How It Works</a>
+            <a href="#samples">Sample Output</a>
+            <a href="#faq">FAQ</a>
+            <a href="#preview">Preview</a>
+          </div>
+        </div>
+
+        <div>
+          <h4>Company</h4>
+          <div class="foot-links">
+            <a href="mailto:hello@brokerpostai.com">Contact</a>
+          </div>
+        </div>
+
+        <div>
+          <h4>Legal</h4>
+          <div class="foot-links">
+            <a href="#">Privacy Policy</a>
+            <a href="#">Terms of Service</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>    }
     a{color:inherit;text-decoration:none}
     img{max-width:100%;display:block}
 
